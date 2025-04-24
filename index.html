@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetentionLabs - AI Memory Research</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>RetentionLabs</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="language-selector">
+                    <button id="lang-en" class="lang-btn active">EN</button>
+                    <button id="lang-ko" class="lang-btn">KR</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-i18n="hero.title">RetentionLabs</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Expanding the Memory of Artificial Intelligence</p>
+                    <div class="hero-buttons">
+                        <a href="https://github.com/RetentionLabs" class="btn primary" data-i18n="hero.github">GitHub</a>
+                        <a href="#projects" class="btn secondary" data-i18n="hero.projects">Our Projects</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="memory-visualization">
+                        <!-- SVG or canvas visualization will go here -->
+                        <div class="memory-nodes"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-i18n="about.title">About RetentionLabs</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-i18n="about.description1">RetentionLabs is an open-source project group focused on researching and developing AI memory solutions. Our mission is to overcome the context length limitations of Self-Attention mechanisms in large language models.</p>
+                        <p data-i18n="about.description2">We believe that by enhancing AI systems with better memory capabilities, we can create more helpful, consistent, and personalized AI experiences.</p>
+                    </div>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3 data-i18n="about.feature1.title">Long-term Memory</h3>
+                            <p data-i18n="about.feature1.description">Enabling AI to retain information across extended interactions</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3 data-i18n="about.feature2.title">Weight-Based Storage</h3>
+                            <p data-i18n="about.feature2.description">Storing memories directly in model weights rather than external databases</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <h3 data-i18n="about.feature3.title">Open Source</h3>
+                            <p data-i18n="about.feature3.description">Collaborative development for the advancement of AI memory research</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title" data-i18n="projects.title">Our Projects</h2>
+                <div class="project-cards">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 data-i18n="projects.retention.title">RetentionEngine</h3>
+                            <span class="project-badge" data-i18n="projects.retention.status">Active</span>
+                        </div>
+                        <p data-i18n="projects.retention.description">A PyTorch adapter that enhances language models with memory capabilities. Unlike RAG approaches, RetentionEngine stores information directly in the adapter weights, allowing for more efficient and integrated memory retention.</p>
+                        <div class="project-features">
+                            <div class="project-feature">
+                                <i class="fas fa-memory"></i>
+                                <span data-i18n="projects.retention.feature1">Conversation Memory</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-database"></i>
+                                <span data-i18n="projects.retention.feature2">Weight-Based Storage</span>
+                            </div>
+                            <div class="project-feature">
+                                <i class="fas fa-plug"></i>
+                                <span data-i18n="projects.retention.feature3">Easy Integration</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn small" data-i18n="projects.learnMore">Learn More</a>
+                            <a href="https://github.com/RetentionLabs" class="btn small secondary" data-i18n="projects.github">GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card future">
+                        <div class="project-header">
+                            <h3 data-i18n="projects.future.title">Future Projects</h3>
+                            <span class="project-badge planned" data-i18n="projects.future.status">Planned</span>
+                        </div>
+                        <p data-i18n="projects.future.description">We're constantly exploring new approaches to AI memory. Stay tuned for more innovative projects that will push the boundaries of what's possible with artificial intelligence memory systems.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/RetentionLabs" class="btn small secondary" data-i18n="projects.contribute">Contribute</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contact.title">Get Involved</h2>
+                <p class="contact-intro" data-i18n="contact.intro">Interested in contributing to RetentionLabs or have questions about our projects?</p>
+                <div class="contact-options">
+                    <a href="https://github.com/RetentionLabs" class="contact-option">
+                        <i class="fab fa-github"></i>
+                        <h3 data-i18n="contact.github.title">GitHub</h3>
+                        <p data-i18n="contact.github.description">Check out our repositories and contribute to the code</p>
+                    </a>
+                    <div class="contact-option">
+                        <i class="fas fa-envelope"></i>
+                        <h3 data-i18n="contact.email.title">Email</h3>
+                        <p data-i18n="contact.email.description">Reach out to us at <a href="mailto:contact@retentionlabs.ai">contact@retentionlabs.ai</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>RetentionLabs</h2>
+                    <p data-i18n="footer.tagline">Expanding the Memory of AI</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3 data-i18n="footer.navigation">Navigation</h3>
+                        <ul>
+                            <li><a href="#about" data-i18n="nav.about">About</a></li>
+                            <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 data-i18n="footer.connect">Connect</h3>
+                        <ul>
+                            <li><a href="https://github.com/RetentionLabs"><i class="fab fa-github"></i> GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RetentionLabs. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
