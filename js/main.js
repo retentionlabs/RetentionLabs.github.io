@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         delay: 100
     });
 
-    // Initialize VANTA.NET background for memory visualization
+    // Initialize VANTA.NET background for hero section
     let vantaEffect = null;
 
     function initVanta() {
@@ -19,19 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color').trim();
 
         vantaEffect = VANTA.NET({
-            el: '#memory-viz',
+            el: '#hero-background',
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
-            minHeight: 400,
-            minWidth: 400,
+            minHeight: 200,
+            minWidth: 200,
             scale: 1.00,
             scaleMobile: 1.00,
             color: primaryColor,
-            backgroundColor: isDark ? '#1e293b' : '#f8fafc',
-            points: 8,
-            maxDistance: 25,
-            spacing: 20
+            backgroundColor: isDark ? '#0f172a' : '#ffffff',
+            points: 12,
+            maxDistance: 30,
+            spacing: 20,
+            showDots: true
         });
     }
 
@@ -50,9 +51,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize VANTA after theme is set
-    if (document.getElementById('memory-viz')) {
+    if (document.getElementById('hero-background')) {
         initVanta();
     }
+
+    // Add memory connection lines animation
+    function animateMemoryConnections() {
+        const memoryNodes = document.querySelectorAll('.memory-node');
+        if (!memoryNodes.length) return;
+
+        // Create SVG element for dynamic connections
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.setAttribute('width', '100%');
+        svg.setAttribute('height', '100%');
+        svg.style.position = 'absolute';
+        svg.style.top = '0';
+        svg.style.left = '0';
+        svg.style.pointerEvents = 'none';
+        svg.style.zIndex = '5';
+
+        const brainContainer = document.querySelector('.brain-container');
+        brainContainer.appendChild(svg);
+
+        // Create connections between nodes
+        for (let i = 0; i < memoryNodes.length; i++) {
+            for (let j = i + 1; j < memoryNodes.length; j++) {
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('stroke', 'var(--primary-color)');
+                line.setAttribute('stroke-width', '1');
+                line.setAttribute('opacity', '0.3');
+                svg.appendChild(line);
+
+                // Animate connection
+                setInterval(() => {
+                    const node1 = memoryNodes[i].getBoundingClientRect();
+                    const node2 = memoryNodes[j].getBoundingClientRect();
+                    const container = brainContainer.getBoundingClientRect();
+
+                    const x1 = node1.left - container.left + node1.width / 2;
+                    const y1 = node1.top - container.top + node1.height / 2;
+                    const x2 = node2.left - container.left + node2.width / 2;
+                    const y2 = node2.top - container.top + node2.height / 2;
+
+                    line.setAttribute('x1', x1);
+                    line.setAttribute('y1', y1);
+                    line.setAttribute('x2', x2);
+                    line.setAttribute('y2', y2);
+
+                    // Pulse effect
+                    const opacity = 0.1 + Math.random() * 0.3;
+                    line.setAttribute('opacity', opacity.toString());
+                }, 1000 + Math.random() * 2000);
+            }
+        }
+    }
+
+    // Initialize memory connections animation
+    setTimeout(() => {
+        animateMemoryConnections();
+    }, 1000);
 
     // Theme toggle event listener
     themeToggle.addEventListener('click', () => {
@@ -72,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Reinitialize VANTA with new theme colors
-        if (document.getElementById('memory-viz')) {
+        if (document.getElementById('hero-background')) {
             setTimeout(initVanta, 300);
         }
     });

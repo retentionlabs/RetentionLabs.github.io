@@ -305,28 +305,15 @@ section {
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
+/* Full background visualization */
+#hero-background {
     position: absolute;
-    top: -50%;
-    right: -50%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, var(--primary-light) 0%, transparent 70%);
-    opacity: 0.1;
-    z-index: 0;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: -50%;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, var(--secondary-color) 0%, transparent 70%);
-    opacity: 0.05;
-    z-index: 0;
+    z-index: 1;
+    opacity: 0.8;
 }
 
 .hero .container {
@@ -341,6 +328,16 @@ section {
 .hero-content {
     flex: 1;
     animation: fadeInUp 1s ease-out;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .hero-content {
+    background-color: rgba(30, 41, 59, 0.85);
 }
 
 .hero-title {
@@ -392,11 +389,38 @@ section {
     position: relative;
     overflow: hidden;
     border-radius: var(--border-radius-lg);
-    background-color: var(--surface-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transform-style: preserve-3d;
     perspective: 1000px;
+}
+
+/* Memory Brain Visualization */
+.memory-brain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brain-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.brain-connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><path d="M50,150 C100,50 200,50 250,150 C200,250 100,250 50,150 Z" fill="none" stroke="%234f46e5" stroke-width="1" opacity="0.3"/><path d="M75,100 L225,100" stroke="%234f46e5" stroke-width="1" opacity="0.3"/><path d="M75,200 L225,200" stroke="%234f46e5" stroke-width="1" opacity="0.3"/><path d="M150,50 L150,250" stroke="%234f46e5" stroke-width="1" opacity="0.3"/></svg>') center/contain no-repeat;
+    opacity: 0.7;
 }
 
 .memory-nodes {
@@ -405,7 +429,128 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.8;
+}
+
+.memory-node {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+    transform-style: preserve-3d;
+    animation: pulse 3s infinite;
+}
+
+.memory-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    opacity: 0.5;
+}
+
+.node1 {
+    top: 50px;
+    left: 150px;
+    animation-delay: 0s;
+    background-color: var(--primary-color);
+}
+
+.node2 {
+    top: 100px;
+    left: 75px;
+    animation-delay: 0.5s;
+    background-color: var(--accent-color-1);
+}
+
+.node3 {
+    top: 100px;
+    left: 225px;
+    animation-delay: 1s;
+    background-color: var(--secondary-color);
+}
+
+.node4 {
+    top: 200px;
+    left: 75px;
+    animation-delay: 1.5s;
+    background-color: var(--accent-color-2);
+}
+
+.node5 {
+    top: 200px;
+    left: 225px;
+    animation-delay: 2s;
+    background-color: var(--accent-color-3);
+}
+
+.node6 {
+    top: 250px;
+    left: 150px;
+    animation-delay: 2.5s;
+    background-color: var(--primary-color);
+}
+
+.memory-pulses {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.memory-pulses::before,
+.memory-pulses::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    opacity: 0;
+    animation: ripple 4s infinite;
+}
+
+.memory-pulses::after {
+    animation-delay: 2s;
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes floatAnimation {
