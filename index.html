@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <header>
@@ -40,16 +42,15 @@
         <section id="hero" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title" data-i18n="hero.title">RetentionLabs</h1>
-                    <p class="hero-subtitle" data-i18n="hero.subtitle">Expanding the Memory of Artificial Intelligence</p>
-                    <div class="hero-buttons">
+                    <h1 class="hero-title animate__animated animate__fadeInUp" data-i18n="hero.title">RetentionLabs</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s" data-i18n="hero.subtitle">Expanding the Memory of Artificial Intelligence</p>
+                    <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
                         <a href="https://github.com/RetentionLabs" class="btn primary" data-i18n="hero.github">GitHub</a>
                         <a href="#projects" class="btn secondary" data-i18n="hero.projects">Our Projects</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="memory-visualization">
-                        <!-- SVG or canvas visualization will go here -->
+                <div class="hero-image animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="memory-visualization" id="memory-viz">
                         <div class="memory-nodes"></div>
                     </div>
                 </div>
@@ -59,28 +60,28 @@
         <!-- About Section -->
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title" data-i18n="about.title">About RetentionLabs</h2>
+                <h2 class="section-title" data-aos="fade-up" data-i18n="about.title">About RetentionLabs</h2>
                 <div class="about-content">
-                    <div class="about-text">
+                    <div class="about-text" data-aos="fade-up" data-aos-delay="100">
                         <p data-i18n="about.description1">RetentionLabs is an open-source project group focused on researching and developing AI memory solutions. Our mission is to overcome the context length limitations of Self-Attention mechanisms in large language models.</p>
                         <p data-i18n="about.description2">We believe that by enhancing AI systems with better memory capabilities, we can create more helpful, consistent, and personalized AI experiences.</p>
                     </div>
                     <div class="about-features">
-                        <div class="feature">
+                        <div class="feature" data-aos="fade-up" data-aos-delay="200">
                             <div class="feature-icon">
                                 <i class="fas fa-brain"></i>
                             </div>
                             <h3 data-i18n="about.feature1.title">Long-term Memory</h3>
                             <p data-i18n="about.feature1.description">Enabling AI to retain information across extended interactions</p>
                         </div>
-                        <div class="feature">
+                        <div class="feature" data-aos="fade-up" data-aos-delay="300">
                             <div class="feature-icon">
                                 <i class="fas fa-network-wired"></i>
                             </div>
                             <h3 data-i18n="about.feature2.title">Weight-Based Storage</h3>
                             <p data-i18n="about.feature2.description">Storing memories directly in model weights rather than external databases</p>
                         </div>
-                        <div class="feature">
+                        <div class="feature" data-aos="fade-up" data-aos-delay="400">
                             <div class="feature-icon">
                                 <i class="fas fa-code-branch"></i>
                             </div>
@@ -95,9 +96,9 @@
         <!-- Projects Section -->
         <section id="projects" class="projects">
             <div class="container">
-                <h2 class="section-title" data-i18n="projects.title">Our Projects</h2>
+                <h2 class="section-title" data-aos="fade-up" data-i18n="projects.title">Our Projects</h2>
                 <div class="project-cards">
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-header">
                             <h3 data-i18n="projects.retention.title">RetentionEngine</h3>
                             <span class="project-badge" data-i18n="projects.retention.status">Active</span>
@@ -118,19 +119,19 @@
                             </div>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn small" data-i18n="projects.learnMore">Learn More</a>
+                            <a href="#" class="btn small accent1" data-i18n="projects.learnMore">Learn More</a>
                             <a href="https://github.com/RetentionLabs" class="btn small secondary" data-i18n="projects.github">GitHub</a>
                         </div>
                     </div>
-                    
-                    <div class="project-card future">
+
+                    <div class="project-card future" data-aos="fade-up" data-aos-delay="300">
                         <div class="project-header">
                             <h3 data-i18n="projects.future.title">Future Projects</h3>
                             <span class="project-badge planned" data-i18n="projects.future.status">Planned</span>
                         </div>
                         <p data-i18n="projects.future.description">We're constantly exploring new approaches to AI memory. Stay tuned for more innovative projects that will push the boundaries of what's possible with artificial intelligence memory systems.</p>
                         <div class="project-links">
-                            <a href="https://github.com/RetentionLabs" class="btn small secondary" data-i18n="projects.contribute">Contribute</a>
+                            <a href="https://github.com/RetentionLabs" class="btn small accent2" data-i18n="projects.contribute">Contribute</a>
                         </div>
                     </div>
                 </div>
@@ -140,15 +141,15 @@
         <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
-                <h2 class="section-title" data-i18n="contact.title">Get Involved</h2>
-                <p class="contact-intro" data-i18n="contact.intro">Interested in contributing to RetentionLabs or have questions about our projects?</p>
+                <h2 class="section-title" data-aos="fade-up" data-i18n="contact.title">Get Involved</h2>
+                <p class="contact-intro" data-aos="fade-up" data-aos-delay="100" data-i18n="contact.intro">Interested in contributing to RetentionLabs or have questions about our projects?</p>
                 <div class="contact-options">
-                    <a href="https://github.com/RetentionLabs" class="contact-option">
+                    <a href="https://github.com/RetentionLabs" class="contact-option" data-aos="fade-up" data-aos-delay="200">
                         <i class="fab fa-github"></i>
                         <h3 data-i18n="contact.github.title">GitHub</h3>
                         <p data-i18n="contact.github.description">Check out our repositories and contribute to the code</p>
                     </a>
-                    <div class="contact-option">
+                    <div class="contact-option" data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-envelope"></i>
                         <h3 data-i18n="contact.email.title">Email</h3>
                         <p data-i18n="contact.email.description">Reach out to us at <a href="mailto:contact@retentionlabs.ai">contact@retentionlabs.ai</a></p>
@@ -188,7 +189,10 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </body>
 </html>
