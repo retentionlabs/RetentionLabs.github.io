@@ -39,6 +39,13 @@ const translations = {
         "projects.github": "GitHub",
         "projects.contribute": "Contribute",
         
+        // Contact section
+        "contact.title": "Get Involved",
+        "contact.intro": "Interested in contributing to RetentionLabs or have questions about our projects?",
+        "contact.github.title": "GitHub",
+        "contact.github.description": "Check out our repositories and contribute to the code",
+        "contact.email.title": "Email",
+        
         // Team section
         "team.title": "Board of Directors",
         "team.intro": "Meet the key members driving RetentionLabs forward",
@@ -54,13 +61,6 @@ const translations = {
         "team.member4.name": "Jeonghyeon Woo",
         "team.member4.role": "Collaboration Director",
         "team.member4.description": "Partnership & Collaboration",
-        
-        // Contact section
-        "contact.title": "Get Involved",
-        "contact.intro": "Interested in contributing to RetentionLabs or have questions about our projects?",
-        "contact.github.title": "GitHub",
-        "contact.github.description": "Check out our repositories and contribute to the code",
-        "contact.email.title": "Email",
         
         // Footer
         "footer.tagline": "An open-source project group focused on researching AI memory to overcome context length limitations in large language models.",
@@ -108,6 +108,13 @@ const translations = {
         "projects.github": "GitHub",
         "projects.contribute": "기여하기",
         
+        // Contact section
+        "contact.title": "연락처",
+        "contact.intro": "RetentionLabs에 기여하거나 프로젝트에 대한 질문이 있으신가요?",
+        "contact.github.title": "GitHub",
+        "contact.github.description": "저장소를 확인하고 코드에 기여해 보세요",
+        "contact.email.title": "이메일",
+        
         // Team section
         "team.title": "Board 소개",
         "team.intro": "RetentionLabs의 의사 결정을 수행하는 Board 멤버들을 소개합니다",
@@ -119,13 +126,6 @@ const translations = {
         "team.member3.description": "연구 및 혁신",
         "team.member4.name": "우정현",
         "team.member4.description": "파트너십 및 협업",
-        
-        // Contact section
-        "contact.title": "참여하기",
-        "contact.intro": "RetentionLabs에 기여하거나 프로젝트에 대한 질문이 있으신가요?",
-        "contact.github.title": "GitHub",
-        "contact.github.description": "저장소를 확인하고 코드에 기여해 보세요",
-        "contact.email.title": "이메일",
         
         // Footer
         "footer.tagline": "RetentionLabs는 대규모 언어 모델의 컨텍스트 길이 한계를 극복하기 위해 AI 메모리를 연구하는 오픈소스 프로젝트 그룹입니다.",

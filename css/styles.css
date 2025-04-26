@@ -874,7 +874,8 @@ section {
 }
 
 .team .section-title {
-    color: var(--primary-color);
+    font-size: var(--font-size-xxl);
+    color: rgb(34, 30, 101);
     margin-bottom: var(--spacing-md);
 }
 
