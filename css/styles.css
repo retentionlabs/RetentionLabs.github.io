@@ -852,6 +852,186 @@ section {
     line-height: 1.6;
 }
 
+/* Team Section */
+.team {
+    background-color: var(--surface-color);
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-xxl) 0;
+}
+
+.team::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: var(--gradient-1);
+    opacity: 0.1;
+    filter: blur(50px);
+}
+
+.team .section-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.team-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-xxl);
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 1;
+    min-width: 220px;
+    max-width: 280px;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal);
+}
+
+.team-member:hover::before {
+    transform: scaleX(1);
+}
+
+.team-member:nth-child(2)::before {
+    background: var(--gradient-2);
+}
+
+.team-member:nth-child(3)::before {
+    background: var(--gradient-3);
+}
+
+.team-member:nth-child(4)::before {
+    background: linear-gradient(135deg, var(--accent-color-1), var(--accent-color-3));
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+}
+
+.member-avatar svg {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team-member:hover .member-avatar svg {
+    transform: scale(1.05);
+}
+
+/* Add a subtle pulse animation to the SVG circles */
+@keyframes avatar-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.member-avatar-1 circle:first-child {
+    animation: avatar-pulse 4s infinite ease-in-out;
+    transform-origin: center;
+}
+
+.member-avatar-2 circle:first-child {
+    animation: avatar-pulse 4.5s infinite ease-in-out;
+    transform-origin: center;
+}
+
+.member-avatar-3 circle:first-child {
+    animation: avatar-pulse 5s infinite ease-in-out;
+    transform-origin: center;
+}
+
+.member-avatar-4 circle:first-child {
+    animation: avatar-pulse 4.2s infinite ease-in-out;
+    transform-origin: center;
+}
+
+/* Add dark theme support for avatar faces */
+[data-theme="dark"] .member-avatar circle:nth-child(2),
+[data-theme="dark"] .member-avatar path {
+    fill: rgba(255, 255, 255, 0.8);
+}
+
+.team-member h3 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.member-role {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.member-description {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
 /* Footer */
 footer {
     background-color: var(--surface-color);

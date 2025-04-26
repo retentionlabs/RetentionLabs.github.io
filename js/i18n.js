@@ -39,6 +39,22 @@ const translations = {
         "projects.github": "GitHub",
         "projects.contribute": "Contribute",
         
+        // Team section
+        "team.title": "Board of Directors",
+        "team.intro": "Meet the key members driving RetentionLabs forward",
+        "team.member1.name": "Dongwan Yoo",
+        "team.member1.role": "Main Director",
+        "team.member1.description": "AI Memory Research & Project Management",
+        "team.member2.name": "Chaeun Moon",
+        "team.member2.role": "Lead Developer",
+        "team.member2.description": "System Architecture & Development",
+        "team.member3.name": "Donghyun Kim",
+        "team.member3.role": "Research Director",
+        "team.member3.description": "Research & Innovation",
+        "team.member4.name": "Jeonghyeon Woo",
+        "team.member4.role": "Collaboration Director",
+        "team.member4.description": "Partnership & Collaboration",
+        
         // Contact section
         "contact.title": "Get Involved",
         "contact.intro": "Interested in contributing to RetentionLabs or have questions about our projects?",
@@ -91,6 +107,18 @@ const translations = {
         "projects.learnMore": "자세히 보기",
         "projects.github": "GitHub",
         "projects.contribute": "기여하기",
+        
+        // Team section
+        "team.title": "Board 소개",
+        "team.intro": "RetentionLabs의 의사 결정을 수행하는 Board 멤버들을 소개합니다",
+        "team.member1.name": "유동완",
+        "team.member1.description": "AI 메모리 연구 및 프로젝트 총괄",
+        "team.member2.name": "문채운",
+        "team.member2.description": "시스템 아키텍처 및 개발",
+        "team.member3.name": "김동현",
+        "team.member3.description": "연구 및 혁신",
+        "team.member4.name": "우정현",
+        "team.member4.description": "파트너십 및 협업",
         
         // Contact section
         "contact.title": "참여하기",
