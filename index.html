@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RetentionLabs - AI Memory Research</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,22 +53,26 @@
                         <a href="#projects" class="btn secondary" data-i18n="hero.projects">Our Projects</a>
                     </div>
                 </div>
-                <div class="hero-image animate__animated animate__fadeIn animate__delay-1s">
+                <div class="hero-image">
                     <div class="memory-visualization">
-                        <div class="memory-brain">
-                            <div class="brain-container">
-                                <div class="brain-connections"></div>
-                                <div class="memory-nodes">
-                                    <div class="memory-node node1"></div>
-                                    <div class="memory-node node2"></div>
-                                    <div class="memory-node node3"></div>
-                                    <div class="memory-node node4"></div>
-                                    <div class="memory-node node5"></div>
-                                    <div class="memory-node node6"></div>
-                                </div>
-                                <div class="memory-pulses"></div>
-                            </div>
-                        </div>
+                        <!-- SVG or canvas visualization will go here -->
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6366f1" />
+                                    <stop offset="100%" stop-color="#8b5cf6" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Neural network visualization -->
+                            <g class="nodes">
+                                <circle cx="150" cy="150" r="100" fill="url(#gradient1)" opacity="0.2" />
+                                <circle cx="150" cy="150" r="80" fill="url(#gradient1)" opacity="0.3" />
+                                <circle cx="150" cy="150" r="60" fill="url(#gradient1)" opacity="0.4" />
+                            </g>
+                            <g class="connections">
+                                <!-- Connection lines will be animated with JavaScript -->
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -116,7 +121,7 @@
                 <div class="project-cards">
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="project-header">
-                            <h3 data-i18n="projects.retention.title">RetentionEngine</h3>
+                            <h3 data-i18n="projects.retention.title"><i class="fas fa-server"></i>&nbsp;&nbsp;&nbsp;&nbsp;RetentionEngine</h3>
                             <span class="project-badge" data-i18n="projects.retention.status">Active</span>
                         </div>
                         <p data-i18n="projects.retention.description">A PyTorch adapter that enhances language models with memory capabilities. Unlike RAG approaches, RetentionEngine stores information directly in the adapter weights, allowing for more efficient and integrated memory retention.</p>
@@ -135,8 +140,8 @@
                             </div>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn small accent1" data-i18n="projects.learnMore">Learn More</a>
-                            <a href="https://github.com/RetentionLabs" class="btn small secondary" data-i18n="projects.github">GitHub</a>
+                            <a href="engine.html" class="btn small accent1" data-i18n="projects.learnMore">Learn More</a>
+                            <a href="https://github.com/RetentionLabs/RetentionEngine" class="btn small secondary" data-i18n="projects.github">GitHub</a>
                         </div>
                     </div>
 
@@ -168,7 +173,7 @@
                     <div class="contact-option" data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-envelope"></i>
                         <h3 data-i18n="contact.email.title">Email</h3>
-                        <p data-i18n="contact.email.description">Reach out to us at <a href="mailto:contact@retentionlabs.ai">contact@retentionlabs.ai</a></p>
+                        <p data-i18n="contact.email.description"><a href="mailto:retentionlabs@gmail.com">retentionlabs@gmail.com</a></p>
                     </div>
                 </div>
             </div>
@@ -189,6 +194,13 @@
                             <li><a href="#about" data-i18n="nav.about">About</a></li>
                             <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
                             <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3 data-i18n="footer.resources">Resources</h3>
+                        <ul>
+                            <li><a href="docs/index.html" data-i18n="nav.documentation">Documentation</a></li>
+                            <li><a href="papers/index.html" data-i18n="nav.papers">Research Papers</a></li>
                         </ul>
                     </div>
                     <div class="footer-links-column">

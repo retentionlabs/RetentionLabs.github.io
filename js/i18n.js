@@ -5,10 +5,12 @@ const translations = {
         "nav.about": "About",
         "nav.projects": "Projects",
         "nav.contact": "Contact",
+        "nav.documentation": "Documentation",
+        "nav.papers": "Research Papers",
         
         // Hero section
         "hero.title": "RetentionLabs",
-        "hero.subtitle": "Expanding the Memory of Artificial Intelligence",
+        "hero.subtitle": "Better Memory System for Artificial Intelligence",
         "hero.github": "GitHub",
         "hero.projects": "Our Projects",
         
@@ -25,7 +27,6 @@ const translations = {
         
         // Projects section
         "projects.title": "Our Projects",
-        "projects.retention.title": "RetentionEngine",
         "projects.retention.status": "Active",
         "projects.retention.description": "A PyTorch adapter that enhances language models with memory capabilities. Unlike RAG approaches, RetentionEngine stores information directly in the adapter weights, allowing for more efficient and integrated memory retention.",
         "projects.retention.feature1": "Conversation Memory",
@@ -44,11 +45,11 @@ const translations = {
         "contact.github.title": "GitHub",
         "contact.github.description": "Check out our repositories and contribute to the code",
         "contact.email.title": "Email",
-        "contact.email.description": "Reach out to us at contact@retentionlabs.ai",
         
         // Footer
-        "footer.tagline": "Expanding the Memory of AI",
+        "footer.tagline": "An open-source project group focused on researching AI memory to overcome context length limitations in large language models.",
         "footer.navigation": "Navigation",
+        "footer.resources": "Resources",
         "footer.connect": "Connect",
         "footer.rights": "All rights reserved."
     },
@@ -57,10 +58,12 @@ const translations = {
         "nav.about": "소개",
         "nav.projects": "프로젝트",
         "nav.contact": "연락처",
+        "nav.documentation": "문서",
+        "nav.papers": "연구 논문",
         
         // Hero section
         "hero.title": "RetentionLabs",
-        "hero.subtitle": "인공지능의 기억력을 확장합니다",
+        "hero.subtitle": "인공지능에게 더 나은 기억을",
         "hero.github": "GitHub",
         "hero.projects": "프로젝트 보기",
         
@@ -73,14 +76,13 @@ const translations = {
         "about.feature2.title": "가중치 기반 저장",
         "about.feature2.description": "외부 데이터베이스가 아닌 모델 가중치에 직접 메모리를 저장합니다",
         "about.feature3.title": "오픈 소스",
-        "about.feature3.description": "AI 메모리 연구 발전을 위한 협력적 개발",
+        "about.feature3.description": "AI 메모리 연구 발전을 위한 협력적 개발을 지향합니다",
         
         // Projects section
         "projects.title": "프로젝트",
-        "projects.retention.title": "RetentionEngine",
         "projects.retention.status": "진행 중",
         "projects.retention.description": "언어 모델에 메모리 기능을 추가하는 PyTorch 어댑터입니다. RAG 접근 방식과 달리, RetentionEngine은 정보를 어댑터 가중치에 직접 저장하여 더 효율적이고 통합된 메모리 유지를 가능하게 합니다.",
-        "projects.retention.feature1": "대화 기억",
+        "projects.retention.feature1": "장기 메모리 보존",
         "projects.retention.feature2": "가중치 기반 저장",
         "projects.retention.feature3": "쉬운 통합",
         "projects.future.title": "향후 프로젝트",
@@ -96,13 +98,12 @@ const translations = {
         "contact.github.title": "GitHub",
         "contact.github.description": "저장소를 확인하고 코드에 기여해 보세요",
         "contact.email.title": "이메일",
-        "contact.email.description": "contact@retentionlabs.ai로 연락주세요",
         
         // Footer
-        "footer.tagline": "AI의 기억력을 확장합니다",
+        "footer.tagline": "RetentionLabs는 대규모 언어 모델의 컨텍스트 길이 한계를 극복하기 위해 AI 메모리를 연구하는 오픈소스 프로젝트 그룹입니다.",
         "footer.navigation": "탐색",
+        "footer.resources": "리소스",
         "footer.connect": "연결",
-        "footer.rights": "모든 권리 보유."
     }
 };
 

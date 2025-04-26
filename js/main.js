@@ -55,62 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         initVanta();
     }
 
-    // Add memory connection lines animation
-    function animateMemoryConnections() {
-        const memoryNodes = document.querySelectorAll('.memory-node');
-        if (!memoryNodes.length) return;
-
-        // Create SVG element for dynamic connections
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width', '100%');
-        svg.setAttribute('height', '100%');
-        svg.style.position = 'absolute';
-        svg.style.top = '0';
-        svg.style.left = '0';
-        svg.style.pointerEvents = 'none';
-        svg.style.zIndex = '5';
-
-        const brainContainer = document.querySelector('.brain-container');
-        brainContainer.appendChild(svg);
-
-        // Create connections between nodes
-        for (let i = 0; i < memoryNodes.length; i++) {
-            for (let j = i + 1; j < memoryNodes.length; j++) {
-                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                line.setAttribute('stroke', 'var(--primary-color)');
-                line.setAttribute('stroke-width', '1');
-                line.setAttribute('opacity', '0.3');
-                svg.appendChild(line);
-
-                // Animate connection
-                setInterval(() => {
-                    const node1 = memoryNodes[i].getBoundingClientRect();
-                    const node2 = memoryNodes[j].getBoundingClientRect();
-                    const container = brainContainer.getBoundingClientRect();
-
-                    const x1 = node1.left - container.left + node1.width / 2;
-                    const y1 = node1.top - container.top + node1.height / 2;
-                    const x2 = node2.left - container.left + node2.width / 2;
-                    const y2 = node2.top - container.top + node2.height / 2;
-
-                    line.setAttribute('x1', x1);
-                    line.setAttribute('y1', y1);
-                    line.setAttribute('x2', x2);
-                    line.setAttribute('y2', y2);
-
-                    // Pulse effect
-                    const opacity = 0.1 + Math.random() * 0.3;
-                    line.setAttribute('opacity', opacity.toString());
-                }, 1000 + Math.random() * 2000);
-            }
-        }
-    }
-
-    // Initialize memory connections animation
-    setTimeout(() => {
-        animateMemoryConnections();
-    }, 1000);
-
     // Theme toggle event listener
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -168,119 +112,77 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.hero').style.backgroundPosition = `center ${scrollPosition * 0.05}px`;
         }
     });
+
+    // Neural network visualization
+    createNetworkVisualization();
 });
 
-// Function to create an interactive memory visualization
-function createMemoryVisualization() {
-    const container = document.querySelector('.memory-nodes');
-    if (!container) return;
 
-    // Create memory nodes
-    const nodeCount = 50;
-    for (let i = 0; i < nodeCount; i++) {
-        const node = document.createElement('div');
-        node.classList.add('memory-node');
+// Create neural network visualization
+function createNetworkVisualization() {
+    const svg = document.querySelector('.memory-visualization svg');
+    if (!svg) return;
 
-        // Random position
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
+    const connectionsGroup = svg.querySelector('.connections');
 
-        // Random size
-        const size = Math.random() * 10 + 5;
-
-        // Random animation delay
-        const delay = Math.random() * 5;
-
-        // Style the node
-        node.style.cssText = `
-            position: absolute;
-            left: ${x}%;
-            top: ${y}%;
-            width: ${size}px;
-            height: ${size}px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            opacity: ${Math.random() * 0.5 + 0.1};
-            animation: pulse ${Math.random() * 3 + 2}s infinite;
-            animation-delay: ${delay}s;
-        `;
-
-        container.appendChild(node);
-    }
-
-    // Create connections between nodes
-    const connections = nodeCount * 2;
-    const nodes = document.querySelectorAll('.memory-node');
-
-    for (let i = 0; i < connections; i++) {
-        const connection = document.createElement('div');
-        connection.classList.add('memory-connection');
-
-        // Random nodes to connect
-        const nodeIndex1 = Math.floor(Math.random() * nodeCount);
-        let nodeIndex2 = Math.floor(Math.random() * nodeCount);
-
-        // Ensure we don't connect a node to itself
-        while (nodeIndex2 === nodeIndex1) {
-            nodeIndex2 = Math.floor(Math.random() * nodeCount);
-        }
-
-        // Style the connection
-        connection.style.cssText = `
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: ${Math.random() * 0.2 + 0.1};
-        `;
-
-        // We'll use SVG for the connection lines
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width', '100%');
-        svg.setAttribute('height', '100%');
-
+    // Create random connection lines
+    for (let i = 0; i < 30; i++) {
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('stroke', 'var(--primary-color)');
-        line.setAttribute('stroke-width', '1');
 
-        // We'll update the line positions in a separate function
-        svg.appendChild(line);
-        connection.appendChild(svg);
-        container.appendChild(connection);
+        // Random start and end points within the circle
+        const angle1 = Math.random() * Math.PI * 2;
+        const angle2 = Math.random() * Math.PI * 2;
+        const radius1 = Math.random() * 60 + 20;
+        const radius2 = Math.random() * 60 + 20;
 
-        // Store the node indices for later position updates
-        connection.dataset.node1 = nodeIndex1;
-        connection.dataset.node2 = nodeIndex2;
+        const x1 = 150 + Math.cos(angle1) * radius1;
+        const y1 = 150 + Math.sin(angle1) * radius1;
+        const x2 = 150 + Math.cos(angle2) * radius2;
+        const y2 = 150 + Math.sin(angle2) * radius2;
+
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.setAttribute('stroke', 'url(#gradient1)');
+        line.setAttribute('stroke-width', Math.random() * 1.5 + 0.5);
+        line.setAttribute('opacity', Math.random() * 0.5 + 0.1);
+
+        // Add animation
+        const animateOpacity = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+        animateOpacity.setAttribute('attributeName', 'opacity');
+        animateOpacity.setAttribute('values', `${Math.random() * 0.3 + 0.1};${Math.random() * 0.7 + 0.3};${Math.random() * 0.3 + 0.1}`);
+        animateOpacity.setAttribute('dur', `${Math.random() * 3 + 2}s`);
+        animateOpacity.setAttribute('repeatCount', 'indefinite');
+
+        line.appendChild(animateOpacity);
+        connectionsGroup.appendChild(line);
     }
 
-    // Function to update connection positions
-    function updateConnections() {
-        document.querySelectorAll('.memory-connection').forEach(connection => {
-            const node1 = nodes[connection.dataset.node1];
-            const node2 = nodes[connection.dataset.node2];
+    // Create small nodes (neurons)
+    for (let i = 0; i < 20; i++) {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 
-            if (!node1 || !node2) return;
+        // Random position within the main circle
+        const angle = Math.random() * Math.PI * 2;
+        const radius = Math.random() * 80;
 
-            const rect1 = node1.getBoundingClientRect();
-            const rect2 = node2.getBoundingClientRect();
-            const containerRect = container.getBoundingClientRect();
+        const cx = 150 + Math.cos(angle) * radius;
+        const cy = 150 + Math.sin(angle) * radius;
 
-            const x1 = rect1.left - containerRect.left + rect1.width / 2;
-            const y1 = rect1.top - containerRect.top + rect1.height / 2;
-            const x2 = rect2.left - containerRect.left + rect2.width / 2;
-            const y2 = rect2.top - containerRect.top + rect2.height / 2;
+        circle.setAttribute('cx', cx);
+        circle.setAttribute('cy', cy);
+        circle.setAttribute('r', Math.random() * 3 + 2);
+        circle.setAttribute('fill', 'url(#gradient1)');
 
-            const line = connection.querySelector('line');
-            line.setAttribute('x1', x1);
-            line.setAttribute('y1', y1);
-            line.setAttribute('x2', x2);
-            line.setAttribute('y2', y2);
-        });
+        // Add pulse animation
+        const animateRadius = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+        animateRadius.setAttribute('attributeName', 'r');
+        animateRadius.setAttribute('values', `${Math.random() * 2 + 1};${Math.random() * 4 + 3};${Math.random() * 2 + 1}`);
+        animateRadius.setAttribute('dur', `${Math.random() * 2 + 1}s`);
+        animateRadius.setAttribute('repeatCount', 'indefinite');
+
+        circle.appendChild(animateRadius);
+        svg.querySelector('.nodes').appendChild(circle);
     }
-
-    // Update connections initially and on window resize
-    updateConnections();
-    window.addEventListener('resize', updateConnections);
 }

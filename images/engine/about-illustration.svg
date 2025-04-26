@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .primary { fill: #4F46E5; }
+    .primary-light { fill: #818CF8; }
+    .secondary { fill: #10B981; }
+    .secondary-light { fill: #34D399; }
+    .gray-light { fill: #F3F4F6; }
+    .gray-medium { fill: #D1D5DB; }
+    .gray-dark { fill: #6B7280; }
+  </style>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="400" height="300" rx="20" class="gray-light" />
+  
+  <!-- Brain Outline -->
+  <path d="M200,50 C260,50 300,100 300,150 C300,200 260,250 200,250 C140,250 100,200 100,150 C100,100 140,50 200,50 Z" 
+        stroke="#6B7280" stroke-width="3" fill="none" stroke-dasharray="5,3" />
+  
+  <!-- Memory Nodes -->
+  <g id="memory-network">
+    <!-- Central Node -->
+    <circle cx="200" cy="150" r="20" class="primary" />
+    <circle cx="200" cy="150" r="10" class="secondary" />
+    
+    <!-- Surrounding Nodes -->
+    <circle cx="150" cy="100" r="15" class="primary-light" />
+    <circle cx="250" cy="100" r="15" class="primary-light" />
+    <circle cx="150" cy="200" r="15" class="primary-light" />
+    <circle cx="250" cy="200" r="15" class="primary-light" />
+    
+    <!-- Additional Nodes -->
+    <circle cx="175" cy="125" r="10" class="secondary-light" />
+    <circle cx="225" cy="125" r="10" class="secondary-light" />
+    <circle cx="175" cy="175" r="10" class="secondary-light" />
+    <circle cx="225" cy="175" r="10" class="secondary-light" />
+    
+    <!-- Connections -->
+    <path d="M200,150 L150,100" stroke="#4F46E5" stroke-width="2" />
+    <path d="M200,150 L250,100" stroke="#4F46E5" stroke-width="2" />
+    <path d="M200,150 L150,200" stroke="#4F46E5" stroke-width="2" />
+    <path d="M200,150 L250,200" stroke="#4F46E5" stroke-width="2" />
+    
+    <path d="M200,150 L175,125" stroke="#10B981" stroke-width="2" />
+    <path d="M200,150 L225,125" stroke="#10B981" stroke-width="2" />
+    <path d="M200,150 L175,175" stroke="#10B981" stroke-width="2" />
+    <path d="M200,150 L225,175" stroke="#10B981" stroke-width="2" />
+    
+    <path d="M150,100 L175,125" stroke="#818CF8" stroke-width="1" stroke-dasharray="3,2" />
+    <path d="M250,100 L225,125" stroke="#818CF8" stroke-width="1" stroke-dasharray="3,2" />
+    <path d="M150,200 L175,175" stroke="#818CF8" stroke-width="1" stroke-dasharray="3,2" />
+    <path d="M250,200 L225,175" stroke="#818CF8" stroke-width="1" stroke-dasharray="3,2" />
+  </g>
+  
+  <!-- Data Flow Animation -->
+  <circle cx="200" cy="150" r="30" fill="none" stroke="#10B981" stroke-width="2" opacity="0.5">
+    <animate attributeName="r" values="30;40;30" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Text Labels -->
+  <text x="200" y="40" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" class="gray-dark">AI Memory Network</text>
+  <text x="150" y="85" text-anchor="middle" font-family="Arial" font-size="10" class="gray-dark">Long-term</text>
+  <text x="250" y="85" text-anchor="middle" font-family="Arial" font-size="10" class="gray-dark">Short-term</text>
+  <text x="150" y="215" text-anchor="middle" font-family="Arial" font-size="10" class="gray-dark">Context</text>
+  <text x="250" y="215" text-anchor="middle" font-family="Arial" font-size="10" class="gray-dark">Knowledge</text>
+</svg>
