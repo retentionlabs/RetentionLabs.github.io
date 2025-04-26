@@ -17,6 +17,9 @@
     --gradient-1: linear-gradient(135deg, #8b5cf6, #4f46e5);
     --gradient-2: linear-gradient(135deg, #0ea5e9, #3b82f6);
     --gradient-3: linear-gradient(135deg, #d27433, #c45601);
+    --gradient-header: linear-gradient(to right, #4f46e5, #8b5cf6, #6366f1);
+    --gradient-conic: conic-gradient(from 225deg, #8b5cf6, #4f46e5, #3b82f6, #0ea5e9, #8b5cf6);
+    --gradient-shine: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.2) 50%, transparent 75%);
 
     /* Spacing */
     --spacing-xs: 0.25rem;
@@ -160,10 +163,22 @@ img {
     border: none;
 }
 
-.btn.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
-    background: var(--primary-dark);
+.btn.primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shine);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    z-index: -1;
+    transition: background-position 0.7s ease;
+}
+
+.btn.primary:hover::after {
+    background-position: 100% 0;
 }
 
 .btn.secondary {
@@ -181,21 +196,51 @@ img {
 .btn.accent1 {
     background: var(--accent-color-1);
     color: white;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn.accent1:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+.btn.accent1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shine);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    z-index: -1;
+    transition: background-position 0.7s ease;
+}
+
+.btn.accent1:hover::after {
+    background-position: 100% 0;
 }
 
 .btn.accent2 {
     background: var(--secondary-color);
     color: white;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn.accent2:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+.btn.accent2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shine);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    z-index: -1;
+    transition: background-position 0.7s ease;
+}
+
+.btn.accent2:hover::after {
+    background-position: 100% 0;
 }
 
 .btn.small {
@@ -1273,4 +1318,192 @@ footer::after {
 
 .nodes circle:nth-child(3) {
     animation: pulse3 2s infinite;
+}
+
+/* Header gradient background effect */
+.gradient-bg-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-header);
+    opacity: 0.08;
+    z-index: 0;
+}
+
+/* Enhanced button styles with gradients */
+.btn.primary {
+    background: var(--gradient-1);
+    color: white;
+    border: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn.primary::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shine);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    z-index: -1;
+    transition: background-position 0.7s ease;
+}
+
+.btn.primary:hover::after {
+    background-position: 100% 0;
+}
+
+.btn.accent1 {
+    background: var(--gradient-1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.accent1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shine);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    z-index: -1;
+    transition: background-position 0.7s ease;
+}
+
+.btn.accent1:hover::after {
+    background-position: 100% 0;
+}
+
+.btn.accent2 {
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(-1deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Hero section with enhanced gradient */
+.hero-title {
+    background: var(--gradient-1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+/* Enhanced project cards */
+.project-card {
+    background: linear-gradient(135deg, var(--background-color), var(--background-color) 80%, rgba(79, 70, 229, 0.05) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-conic);
+    filter: blur(40px);
+    opacity: 0.15;
+    transform: translate(30%, 30%);
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.project-card:hover::after {
+    transform: translate(20%, 20%) scale(1.5);
+    opacity: 0.2;
+}
+
+/* Enhanced contact options */
+.contact-option {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom right, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        rgba(255, 255, 255, 0.02) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-option::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-conic);
+    animation: rotate 12s linear infinite;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: -1;
+}
+
+.contact-option:hover::before {
+    opacity: 0.1;
+}
+
+/* Team member enhanced cards */
+.team-member {
+    background: linear-gradient(135deg, var(--background-color), var(--background-color) 85%, rgba(99, 102, 241, 0.05) 100%);
+    position: relative;
+}
+
+.team-member::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-conic);
+    filter: blur(30px);
+    opacity: 0.1;
+    transform: translate(30%, 30%);
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.team-member:hover::after {
+    transform: translate(20%, 20%) scale(1.3);
+    opacity: 0.15;
+}
+
+.footer-logo h2 {
+    background: var(--gradient-header);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
 }
