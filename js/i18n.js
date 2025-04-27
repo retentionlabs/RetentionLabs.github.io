@@ -52,7 +52,7 @@ const translations = {
         "team.member1.name": "Dongwan Yoo",
         "team.member1.role": "Main Director",
         "team.member1.description": "AI Memory Research & Project Management",
-        "team.member2.name": "Chaeun Moon",
+        "team.member2.name": "Chaeun Mun",
         "team.member2.role": "Lead Developer",
         "team.member2.description": "System Architecture & Development",
         "team.member3.name": "Donghyun Kim",
