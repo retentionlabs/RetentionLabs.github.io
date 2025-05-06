@@ -444,6 +444,11 @@ section {
     transform-style: preserve-3d;
 }
 
+[data-theme="dark"] .memory-visualization {
+    background-color: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
 /* About section */
 .about {
     background-color: var(--background-color);
@@ -924,6 +929,11 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
+[data-theme="dark"] .team .section-title {
+    color: var(--accent-color-2);
+    text-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
 .team-intro {
     text-align: center;
     max-width: 700px;
@@ -1053,9 +1063,9 @@ section {
 }
 
 /* Add dark theme support for avatar faces */
-[data-theme="dark"] .member-avatar circle:nth-child(2),
+[data-theme="dark"] .member-avatar circle,
 [data-theme="dark"] .member-avatar path {
-    fill: rgba(255, 255, 255, 0.8);
+    opacity: 0.6;
 }
 
 .team-member h3 {
