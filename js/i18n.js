@@ -58,7 +58,7 @@ const translations = {
         "team.member3.name": "Donghyun Kim",
         "team.member3.role": "Research Director",
         "team.member3.description": "Research & Innovation",
-        "team.member4.name": "Jeonghyeon Woo",
+        "team.member4.name": "Woocheol Kim",
         "team.member4.role": "Collaboration Director",
         "team.member4.description": "Partnership & Collaboration",
         
@@ -124,7 +124,7 @@ const translations = {
         "team.member2.description": "시스템 아키텍처 및 개발",
         "team.member3.name": "김동현",
         "team.member3.description": "연구 및 혁신",
-        "team.member4.name": "우정현",
+        "team.member4.name": "김우철",
         "team.member4.description": "파트너십 및 협업",
         
         // Footer
